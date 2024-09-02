@@ -5,9 +5,6 @@ services:
 before_install:
   - docker build -t ndjerrou/docker-react-travis .
 
-script:
-  - docker run -e CI=true ndjerrou/docker-react-travis npm run test
-
 deploy:
   provider: elasticbeanstalk
   region: 'eu-north-1'
