@@ -38,7 +38,7 @@ function Login() {
           value={formData.password}
           onChange={handleChange}
         />
-        <button>Login</button>
+        <button>Login with a smile</button>
       </form>
     </div>
   );

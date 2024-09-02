@@ -7,3 +7,12 @@ before_install:
 
 script:
   - docker run -e CI=true ndjerrou/docker-react-travis npm run test
+
+deploy:
+  provider: elasticbeanstalk
+  region: 'eu-north-1'
+  app: frontend
+  env: 'Frontend-env'
+  bucket_name: 'elasticbeanstalk-eu-north-1-399231255960'
+  on:
+    branch: trunk
