@@ -1,0 +1,9 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t ndjerrou/docker-react-travis -f Dockerfile.dev .
+
+script:
+  - docker run -e CI=true ndjerrou/docker-react-travis npm run test
