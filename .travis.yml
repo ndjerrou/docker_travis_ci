@@ -3,6 +3,10 @@ language: generic
 services:
   - docker
 
+branches:
+  only:
+    - trunk
+
 before_install:
   - docker build -t ndjerrou/docker-react-travis -f Dockerfile.dev .
 
