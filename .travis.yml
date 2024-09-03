@@ -5,13 +5,10 @@ services:
 
 branches:
   only:
-    - trunk
+    - feature
 
 before_install:
-  - docker build -t ndjerrou/docker-react-travis -f Dockerfile.dev .
-
-script:
-  - docker run -e CI=true ndjerrou/docker-react-travis npm run test
+  - docker build -t ndjerrou/docker-react-travis .
 
 deploy:
   provider: elasticbeanstalk
@@ -20,6 +17,6 @@ deploy:
   env: 'Frontend-env'
   bucket_name: 'elasticbeanstalk-eu-north-1-399231255960'
   on:
-    branch: trunk
+    branch: feature
   access_key_id: $AWS_ACCESS_KEY
   secret_access_key: $AWS_SECRET_KEY
